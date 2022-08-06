@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 import ToDoList from './componentes/ToDoList';
+import Form from './componentes/Form';
 
 export default function App() {
 
@@ -15,6 +16,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <Form/>
       <ToDoList list={state.list}/>
       <StatusBar style="auto" />
     </View>

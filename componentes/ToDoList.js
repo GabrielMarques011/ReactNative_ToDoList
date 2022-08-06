@@ -27,7 +27,6 @@ class ToDoList extends Component{
                 {this.formatandoNumeroLista(index)} - {item.descricao}
                 </Text>
                 <Button title="Delete" color="red" onPress={() => this.props.onRemove(item)}/>
-                <Button title="Concluido" color="green"/>
             </View>
         )
     }
