@@ -1,5 +1,6 @@
 import react,{Component} from "react";
-import { FlatList, View } from "react-native";
+import { Text ,FlatList, View } from "react-native";
+import { Button } from "react-native-web";
 
 class ToDoList extends Component{
 
@@ -8,15 +9,25 @@ class ToDoList extends Component{
         lista:[
             {id:'1', descricao: 'Testando lista estatica'},
             {id:'2', descricao: 'Testando lista estatica dois'}
-        ]
+        ],
+
+        //criando uma função para deletar a tarefa do ToDoList
+        onRemove: () =>{
+            
+        }
+
     }
 
     //aqui vamos controlar a estrutura de linhas
     //{index} seria a posição 0 da lista (Array)
     alinharLinhas = ({item, index}) =>{
         return(
-            <View>
-                {this.formatandoNumeroLista(index)}-{item.descricao}
+            <View style={{flexDirection: "row", margin: 5}}>
+                <Text style={{flex: 1}}>
+                {this.formatandoNumeroLista(index)} - {item.descricao}
+                </Text>
+                <Button title="Delete" color="red" onPress={() => this.props.onRemove(item)}/>
+                <Button title="Concluido" color="green"/>
             </View>
         )
     }
