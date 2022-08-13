@@ -31,13 +31,9 @@ class Form extends Component{
     render (){
         return(
             <View>
-                <TextInput 
-                value={this.state.text} 
-                onChangeText={this.alteracao}/>
-                <Button 
-                title='Adicionar' 
-                color='blue' 
-                onPress={this.add}/>
+                <TextInput value={this.state.text} onChangeText={this.alteracao}/>
+                
+                <Button title='Adicionar' color='blue' onPress={this.add}/>
             </View>
         )
     }
